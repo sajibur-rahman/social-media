@@ -1,9 +1,17 @@
 import React from 'react';
+import { useParams } from 'react-router-dom';
+import useFatchData from '../../hooks/useFatchData';
+import Posts from '../Posts/Posts';
 
 const UserPosts = () => {
+    const {userId} = useParams();
+    const url = `https://jsonplaceholder.typicode.com/posts?userId=${userId}`;
+    const [posts] = useFatchData(url);
     return (
         <div>
-            <h2>this is user post</h2>
+            {
+                posts ? posts.map((post) => <Posts post={post}/>) : null
+            }
         </div>
     );
 };
