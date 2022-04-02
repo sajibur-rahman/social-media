@@ -19,7 +19,7 @@ const User = ({ user }) => {
       <p className="text-xl my-3">
         website : <span className="text-yellow-700">{website}</span>
       </p>
-      <button onClick={() => navigate(`/posts/${id}`)} className="text-2xl border-2 border-purple-600 uppercase cursor-pointer text-center px-10 py-2 rounded-md">
+      <button onClick={() => navigate(`/userPost/${id}`)} className="text-2xl border-2 border-purple-600 uppercase cursor-pointer text-center px-10 py-2 rounded-md">
         see posts
       </button>
     </div>
