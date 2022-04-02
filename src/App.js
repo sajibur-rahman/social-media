@@ -1,9 +1,10 @@
 import './assets/css/global.css';
+import Header from './components/Header';
 
 function App() {
   return (
     <div>
-      <h1>welcome to social world</h1> 
+      <Header/>
     </div>
   );
 }
