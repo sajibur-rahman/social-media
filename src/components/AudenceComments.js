@@ -8,8 +8,6 @@ const AudenceComments = () => {
     const {postId} = useParams();
     const {comments} = useContext(PostsContext);
     const filterdPostId = +postId;
-    console.log(comments);
-    console.log(filterdPostId);
     useEffect(()=>{
         const selectedComments = comments.filter((comment) => comment.postId === filterdPostId);
         setPostComments(selectedComments)

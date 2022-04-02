@@ -16,7 +16,6 @@ const UserPosts = () => {
         const selectedUserPosts = posts.filter((post) => post.userId === filterdUserId);
         setUserPosts(selectedUserPosts);
     },[posts,filterdUserId]);
-    console.log(userPosts)
     return (
         <div>
             {

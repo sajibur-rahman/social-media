@@ -4,7 +4,6 @@ import Comment from './Comment';
 
 const Comments = () => {
     const {comments} = useContext(PostsContext);
-    console.log(comments) 
     return (
         <div>
             {
