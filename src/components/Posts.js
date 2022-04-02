@@ -1,9 +1,14 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { PostsContext } from '../App';
+import Post from './Post';
 
 const Posts = () => {
+    const {posts} =  useContext(PostsContext);
     return (
         <div>
-            this is post
+            {
+                posts ? posts.map((post) => <Post post={post}/>) : null
+            }
         </div>
     );
 };

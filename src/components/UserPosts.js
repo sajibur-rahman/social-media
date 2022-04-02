@@ -1,9 +1,27 @@
-import React from 'react';
+import React, { useContext, useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
+import { PostsContext } from '../App';
+import Post from './Post';
 
 const UserPosts = () => {
+    const [userPosts,setUserPosts] = useState([])
+    const {userId} = useParams();
+
+    const filterdUserId = +userId
+
+    const { posts } =  useContext(PostsContext);
+
+
+    useEffect(() => {
+        const selectedUserPosts = posts.filter((post) => post.userId === filterdUserId);
+        setUserPosts(selectedUserPosts);
+    },[posts,filterdUserId]);
+    console.log(userPosts)
     return (
         <div>
-            <h3>this is user post</h3>
+            {
+                userPosts ? userPosts.map((post) => <Post key={post.id} post={post}/>) : null
+            }
         </div>
     );
 };
